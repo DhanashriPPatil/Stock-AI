@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-dash-bg: #050814;
+  --color-dash-ink: #f1f5f9;
+  --color-dash-line: rgba(51, 65, 85, 0.5);
+  --color-dash-surface: rgba(7, 11, 25, 0.65);
+  --color-dash-surface-hover: rgba(30, 41, 59, 0.5);
+  --color-dash-card: rgba(7, 11, 25, 0.75);
+  --color-dash-primary: #00c2ff;
+  --color-dash-primary-dark: #0284c7;
+  --color-dash-success: #10b981;
+  --color-dash-danger: #f43f5e;
+  --color-dash-warning: #fbbf24;
+  --color-dash-muted: #94a3b8;
+}
+
+@layer base {
+  body {
+    @apply bg-dash-bg text-dash-ink antialiased selection:bg-dash-primary selection:text-dash-bg;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(0, 194, 255, 0.08) 0px, transparent 55%),
+      radial-gradient(at 100% 100%, rgba(0, 194, 255, 0.04) 0px, transparent 60%),
+      radial-gradient(at 80% 10%, rgba(16, 185, 129, 0.03) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight uppercase;
+  }
+  
+  /* Scrollbar Customization */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030712;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(51, 65, 85, 0.5);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00c2ff;
+  }
+}
+
+@layer components {
+  .technical-border {
+    @apply border border-dash-line;
+  }
+  
+  .col-header {
+    @apply text-[10px] font-bold uppercase tracking-widest text-dash-muted;
+  }
+
+  .data-row {
+    @apply grid transition-colors duration-200 border-b border-dash-line hover:bg-dash-surface-hover hover:text-dash-primary;
+  }
+  
+  .glass {
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-premium {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.5) 0%, rgba(17, 24, 39, 0.35) 100%);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .glass-sidebar {
+    background: linear-gradient(180deg, rgba(8, 12, 24, 0.7) 0%, rgba(3, 7, 18, 0.8) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-navbar {
+    background: rgba(8, 12, 24, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .glow-green {
+    @apply shadow-[0_0_25px_rgba(16,185,129,0.15)];
+  }
+  
+  .glow-red {
+    @apply shadow-[0_0_25px_rgba(244,63,94,0.15)];
+  }
+  
+  .glow-blue {
+    @apply shadow-[0_0_25px_rgba(0,194,255,0.15)];
+  }
+}
+
+/* Custom Infinite Marquee Asset Ticker */
+@keyframes ticker-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-33.33%, 0, 0);
+  }
+}
+
+.animate-ticker-marquee {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 35s linear infinite;
+}
+
+.animate-ticker-marquee:hover {
+  animation-play-state: paused;
+}
+

@@ -1,0 +1,17 @@
+{
+    "timestamp": "2024-05-20_120000",
+    "total_stocks": 5,
+    "scored_master": "Master_merged.csv",
+    "reference_ranking": "Master_merged.csv",
+    "shortlists": {
+        "swing_shortlist": "Master_merged.csv",
+        "short_term_shortlist": "Master_merged.csv",
+        "long_term_core_shortlist": "Master_merged.csv",
+        "long_term_opportunity_shortlist": "Master_merged.csv",
+        "audit_only_universe": "Master_merged.csv"
+    },
+    "report_queues": {
+        "python": ["INFY", "RELIANCE", "HDFCBANK", "TATAMOTORS", "TITAN"],
+        "deepseek": []
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Trend Engineer",
+  "description": "AI-Powered Stock Analysis & Trading Insight Platform with automated scoring, strategy shortlists, and intelligence reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
